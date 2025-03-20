@@ -1,0 +1,70 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bacteria-body {
+      fill: none;
+      stroke: #64FFDA;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+    .bacteria-detail {
+      fill: none;
+      stroke: #1E88E5;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+    }
+    .bacteria-nucleus {
+      fill: #64FFDA;
+      opacity: 0.3;
+    }
+    .bacteria-glow {
+      fill: none;
+      stroke: #64FFDA;
+      stroke-width: 0.5;
+      filter: url(#glow);
+      opacity: 0.5;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.3; }
+      50% { opacity: 0.6; }
+      100% { opacity: 0.3; }
+    }
+    .pulse {
+      animation: pulse 3s infinite ease-in-out;
+    }
+  </style>
+  
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Bacteria Body -->
+  <ellipse cx="64" cy="64" rx="32" ry="20" transform="rotate(30 64 64)" class="bacteria-body" />
+  
+  <!-- Nucleus -->
+  <circle cx="64" cy="64" r="10" class="bacteria-nucleus pulse" />
+  
+  <!-- Bacteria Details -->
+  <path d="M64 44 C68 36, 76 40, 78 34" class="bacteria-detail" />
+  <path d="M78 72 C86 78, 84 86, 90 84" class="bacteria-detail" />
+  <path d="M46 70 C40 78, 38 72, 32 76" class="bacteria-detail" />
+  <path d="M50 52 C42 48, 44 40, 38 42" class="bacteria-detail" />
+  
+  <!-- Flagella -->
+  <path d="M90 58 Q100 54, 104 60 Q108 66, 116 62" class="bacteria-detail" />
+  <path d="M40 70 Q30 74, 26 68 Q22 62, 14 66" class="bacteria-detail" />
+  
+  <!-- Tech Pattern -->
+  <circle cx="64" cy="64" r="18" class="bacteria-glow" />
+  <path d="M64 46 L64 36" class="bacteria-detail" />
+  <path d="M64 82 L64 92" class="bacteria-detail" />
+  <path d="M46 64 L36 64" class="bacteria-detail" />
+  <path d="M82 64 L92 64" class="bacteria-detail" />
+  
+  <!-- Dots -->
+  <circle cx="70" cy="58" r="1.5" fill="#64FFDA" class="pulse" />
+  <circle cx="58" cy="70" r="1.5" fill="#64FFDA" class="pulse" />
+  <circle cx="64" cy="64" r="1" fill="#FFFFFF" />
+</svg>

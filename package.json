@@ -2,8 +2,9 @@
   "name": "germ",
   "displayName": "GeRM",
   "description": "使用LLM Agent自动生成README.md文件",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "publisher": "hcxxxxxx",
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.60.0"
   },
