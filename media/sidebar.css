@@ -1,0 +1,95 @@
+body {
+    font-family: var(--vscode-font-family);
+    color: var(--vscode-foreground);
+    padding: 10px;
+    line-height: 1.6;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .logo img {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .logo h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .description {
+    margin: 0;
+    opacity: 0.8;
+    font-size: 13px;
+  }
+  
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+  }
+  
+  .generate-button {
+    background-color: var(--vscode-button-background);
+    color: var(--vscode-button-foreground);
+  }
+  
+  .generate-button:hover {
+    background-color: var(--vscode-button-hoverBackground);
+  }
+  
+  .button-icon {
+    font-size: 16px;
+  }
+  
+  .section {
+    border-top: 1px solid var(--vscode-panel-border);
+    padding-top: 16px;
+  }
+  
+  .section h3 {
+    margin-top: 0;
+    font-size: 14px;
+  }
+  
+  ul {
+    padding-left: 20px;
+    margin: 8px 0;
+  }
+  
+  li {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+  
+  .footer {
+    margin-top: 16px;
+    font-size: 12px;
+    opacity: 0.7;
+  }
+  
+  .link {
+    color: var(--vscode-textLink-foreground);
+    text-decoration: none;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }

@@ -1,0 +1,118 @@
+{
+  "name": "germ",
+  "displayName": "GeRM",
+  "description": "使用LLM Agent自动生成README.md文件",
+  "version": "0.1.0",
+  "publisher": "hcxxxxxx",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hcxxxxxx/GeRM-vscode.git"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "germ.generateReadme",
+        "title": "GeRM: 生成README"
+      }
+    ],
+    "configuration": {
+      "title": "GeRM",
+      "properties": {
+        "germ.openaiApiKey": {
+          "type": "string",
+          "default": "",
+          "description": "OpenAI API密钥"
+        },
+        "germ.openaiModel": {
+          "type": "string",
+          "default": "gpt-4o-mini",
+          "enum": [
+            "gpt-4o",
+            "gpt-4o-mini",
+            "gpt-3.5-turbo"
+          ],
+          "description": "OpenAI模型"
+        },
+        "germ.maxTokens": {
+          "type": "number",
+          "default": 4096,
+          "description": "生成的最大token数"
+        },
+        "germ.temperature": {
+          "type": "number",
+          "default": 0.7,
+          "minimum": 0,
+          "maximum": 1,
+          "description": "生成温度（0-1之间）"
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "germ-sidebar",
+          "title": "GeRM",
+          "icon": "media/logo.svg"
+        }
+      ]
+    },
+    "views": {
+      "germ-sidebar": [
+        {
+          "id": "germSidebar",
+          "name": "GeRM",
+          "type": "webview"
+        }
+      ]
+    },
+    "menus": {
+      "editor/context": [
+        {
+          "command": "germ.generateReadme",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "germ.generateReadme",
+          "group": "navigation",
+          "when": "explorerResourceIsFolder"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "14.x",
+    "@types/vscode": "^1.60.0",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "eslint": "^7.27.0",
+    "glob": "^7.1.7",
+    "mocha": "^8.4.0",
+    "typescript": "^4.3.2",
+    "vscode-test": "^1.5.2"
+  },
+  "dependencies": {
+    "axios": "^1.8.4"
+  }
+}
