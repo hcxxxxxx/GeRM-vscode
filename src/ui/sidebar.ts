@@ -37,7 +37,7 @@ class GeRMViewProvider implements vscode.WebviewViewProvider {
     );
     
     const logoUri = webview.asWebviewUri(
-      vscode.Uri.joinPath(this._extensionUri, 'media', 'logo.svg')
+      vscode.Uri.joinPath(this._extensionUri, 'media', 'GeRM.svg')
     );
     
     return `<!DOCTYPE html>
