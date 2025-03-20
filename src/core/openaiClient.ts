@@ -6,6 +6,7 @@ export class OpenAIClient {
   private model: string;
   private maxTokens: number;
   private temperature: number;
+  private baseUrl: string;
   
   constructor() {
     // 从VS Code配置中获取设置
@@ -14,6 +15,7 @@ export class OpenAIClient {
     this.model = config.get('openaiModel') || 'gpt-4o-mini';
     this.maxTokens = config.get('maxTokens') || 4096;
     this.temperature = config.get('temperature') || 0.7;
+    this.baseUrl = config.get('base_url') || 'https://api.openai.com';
     
     if (!this.apiKey) {
       throw new Error('未配置OpenAI API密钥');
@@ -28,7 +30,7 @@ export class OpenAIClient {
   ): Promise<string> {
     try {
       const response = await axios.post(
-        'https://api.gptsapi.net/v1/chat/completions',
+        `${this.baseUrl}/v1/chat/completions`,
         {
           model: this.model,
           messages: [

@@ -7,6 +7,7 @@ class OpenAIClient {
     constructor() {
         // 从VS Code配置中获取设置
         const config = vscode.workspace.getConfiguration('germ');
+        this.baseUrl = config.get('base_url') || 'https://api.openai.com';
         this.apiKey = config.get('openaiApiKey') || process.env.OPENAI_API_KEY || '';
         this.model = config.get('openaiModel') || 'gpt-4o-mini';
         this.maxTokens = config.get('maxTokens') || 4096;

@@ -54,6 +54,11 @@
           "minimum": 0,
           "maximum": 1,
           "description": "生成温度（0-1之间）"
+        },
+        "germ.base_url": {
+          "type": "string",
+          "default": "https://api.openai.com",
+          "description": "OpenAI API基础URL"
         }
       }
     },
