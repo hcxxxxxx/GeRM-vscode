@@ -2,7 +2,7 @@
   "name": "germ",
   "displayName": "GeRM",
   "description": "使用LLM Agent自动生成README.md文件",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "publisher": "hcxxxxxx",
   "icon": "icon.png",
   "engines": {
